@@ -19,112 +19,41 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
+        body { background-color: var(--bg-color); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
         .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
 
-        /* NAVIGATION DYNAMIQUE (Style Capture) */
-        header {
-            position: sticky;
-            top: 0;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            position: relative;
-            padding-bottom: 5px;
-        }
-
-        nav a:hover, nav a.active {
-            color: var(--text-primary);
-        }
-
-        nav a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--text-primary);
-        }
+        /* NAVIGATION (Style Ahmed C.) */
+        header { position: sticky; top: 0; background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid var(--border-color); }
+        nav { display: flex; justify-content: center; padding: 20px 0; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { text-decoration: none; color: var(--text-secondary); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; position: relative; padding-bottom: 5px; }
+        nav a:hover, nav a.active { color: var(--text-primary); }
+        nav a.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--text-primary); }
 
         /* SECTIONS */
         section { padding: 80px 0; border-bottom: 1px solid var(--border-color); }
-        .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; text-align: center; letter-spacing: -0.5px; }
+        .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; text-align: center; }
 
-        /* ABOUT ME */
-        .about-content { font-size: 1.1rem; color: var(--text-secondary); text-align: center; max-width: 750px; margin: 0 auto; }
+        /* ABOUT */
+        .about-content { font-size: 1.1rem; color: var(--text-secondary); text-align: center; max-width: 800px; margin: 0 auto; }
 
-        /* SERVICES (Style Grid) */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .service-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 40px 20px;
-            border-radius: 12px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
+        /* SERVICES (Basés sur vos compétences réelles) */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .service-card { background: var(--card-bg); border: 1px solid var(--border-color); padding: 40px 20px; border-radius: 12px; text-align: center; transition: 0.3s; }
         .service-card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        
-        .service-icon { 
-            width: 50px; height: 50px; border: 2px solid var(--accent); 
-            border-radius: 50%; display: flex; align-items: center; 
-            justify-content: center; margin: 0 auto 20px; color: var(--accent);
-        }
+        .service-icon { width: 50px; height: 50px; border: 2px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--accent); font-size: 1.5rem;}
 
-        .service-card h3 { font-size: 1rem; margin-bottom: 10px; text-transform: uppercase; }
-        .service-card p { font-size: 0.85rem; color: var(--text-secondary); }
+        /* PROJECTS LIST - Garde tous vos détails techniques */
+        .projects-list { display: flex; flex-direction: column; gap: 20px; }
+        .project-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 30px; text-decoration: none; transition: 0.3s; display: block; }
+        .project-card:hover { border-color: #444; background: #161616; }
+        .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+        .project-title { font-size: 1.2rem; font-weight: 700; color: var(--text-primary); }
+        .project-desc { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 15px; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tech-tag { font-size: 0.75rem; background: #1e1e1e; color: var(--accent); padding: 4px 10px; border-radius: 4px; border: 1px solid #333; }
 
-        /* PROJECTS */
-        .projects-list { display: flex; flex-direction: column; gap: 12px; }
-        .project-card {
-            background: var(--card-bg); border: 1px solid var(--border-color);
-            border-radius: 12px; padding: 20px; display: flex;
-            justify-content: space-between; align-items: center;
-            text-decoration: none; transition: 0.3s;
-        }
-        .project-card:hover { border-color: #444; }
-        .project-info h3 { font-size: 1rem; color: var(--text-primary); }
-        .project-info p { font-size: 0.85rem; color: var(--text-secondary); }
-        .tag { font-size: 0.75rem; color: var(--text-secondary); border: 1px solid var(--border-color); padding: 4px 8px; border-radius: 4px; }
-
-        footer { padding: 40px 0; text-align: center; color: var(--text-secondary); font-size: 0.8rem; }
+        footer { padding: 60px 0; text-align: center; color: var(--text-secondary); font-size: 0.85rem; }
     </style>
 </head>
 <body>
@@ -146,64 +75,99 @@
     <div class="container">
         <section id="home" style="text-align: center; border-bottom: none;">
             <h1 data-aos="fade-up" style="font-size: 3.5rem; margin-bottom: 10px;">Marwa Ghanmi</h1>
-            <p data-aos="fade-up" data-aos-delay="100" style="color: var(--accent); font-weight: 600; letter-spacing: 2px;">FULLSTACK DEVELOPER</p>
+            <p data-aos="fade-up" data-aos-delay="100" style="color: var(--accent); font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">Fullstack Web Developer</p>
         </section>
 
         <section id="about" data-aos="fade-up">
-            <h2 class="section-title">À PROPOS DE MOI</h2>
+            <h2 class="section-title">À PROPOS</h2>
             <div class="about-content">
-                <p>Développeuse web avec plus de 5 ans d'expérience [cite: 4], je suis spécialisée dans la conception de solutions PHP et WordPress performantes. Mon approche allie expertise technique et sens de l'ergonomie pour créer des sites sécurisés et parfaitement adaptés aux besoins clients[cite: 5].</p>
+                <p>Développeuse web avec plus de 5 ans d'expérience[cite: 4]. Spécialisée dans la conception et la gestion de sites PHP et WordPress, j'allie expertise technique et sens de l'ergonomie pour créer des solutions performantes, sécurisées et adaptées aux besoins clients.</p>
             </div>
         </section>
 
         <section id="services" data-aos="fade-up">
-            <h2 class="section-title">MES SERVICES</h2>
+            <h2 class="section-title">MY SERVICES</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">⚡</div>
-                    <h3>DÉVELOPPEMENT WEB</h3>
-                    <p>Conception de sites vitrines et applications web robustes avec PHP, WordPress et Angular[cite: 16, 169].</p>
+                    <div class="service-icon">🌐</div>
+                    <h3>WEB DEVELOPMENT</h3>
+                    <p>Développement Backend PHP, intégration de blocs Gutenberg sur mesure et gestion de plugins complexes[cite: 8, 13].</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📱</div>
                     <h3>MOBILE & RESPONSIVE</h3>
-                    <p>Développement d'applications mobiles avec Flutter et interfaces adaptées à tous les écrans[cite: 112, 164].</p>
+                    <p>Création d'applications mobiles avec Flutter et interfaces web réactives avec Angular 8[cite: 162, 164].</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>BACKEND & API</h3>
-                    <p>Architecture de bases de données (MySQL, MongoDB) et création d'API sécurisées (Node.js, JWT)[cite: 140, 168, 169].</p>
+                    <div class="service-icon">🔒</div>
+                    <h3>SYSTEMS & API</h3>
+                    <p>Mise en place d'extranets sécurisés, synchronisation LDAP/Active Directory et intégration d'API[cite: 25, 50, 93].</p>
                 </div>
             </div>
         </section>
 
         <section id="projects">
-            <h2 class="section-title">PROJETS RÉCENTS</h2>
+            <h2 class="section-title">PROJECTS</h2>
             <div class="projects-list">
-                <a href="https://www.gorbio.fr" target="_blank" class="project-card" data-aos="fade-up">
-                    <div class="project-info"><h3>Commune de Gorbio</h3><p>Blocs Gutenberg & Moteur Solr[cite: 11, 15].</p></div>
-                    <span class="tag">WordPress</span>
-                </a>
-                <a href="https://www.maenner-staerken.de" target="_blank" class="project-card" data-aos="fade-up">
-                    <div class="project-info"><h3>Männer Stärken</h3><p>Application de prévention (React JS)[cite: 103, 108].</p></div>
-                    <span class="tag">React</span>
-                </a>
-                <a href="https://prianou.com" target="_blank" class="project-card" data-aos="fade-up">
-                    <div class="project-info"><h3>Prianou</h3><p>Géofencing & Solution Mobile[cite: 157, 160].</p></div>
-                    <span class="tag">Angular/Node</span>
-                </a>
+                
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-header">
+                        <div class="project-title">Commune de Gorbio</div>
+                        <a href="https://www.gorbio.fr" target="_blank" style="color: var(--accent); text-decoration:none; font-size: 0.8rem;">VOIR SITE →</a>
+                    </div>
+                    <p class="project-desc">Développement de blocs Gutenberg et plugins sur mesure, import/export CSV et intégration du moteur Solr[cite: 13, 14, 15].</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">PHP</span><span class="tech-tag">Gutenberg</span><span class="tech-tag">Solr</span><span class="tech-tag">ACF</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-header">
+                        <div class="project-title">Ville de Soisy-sous-Montmorency</div>
+                        <a href="https://www.soisy-sous-montmorency.fr" target="_blank" style="color: var(--accent); text-decoration:none; font-size: 0.8rem;">VOIR SITE →</a>
+                    </div>
+                    <p class="project-desc">Mise en place d'un extranet utilisateur sécurisé avec gestion des permissions et API Brevo pour newsletters[cite: 25, 26].</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Extranet</span><span class="tech-tag">Brevo</span><span class="tech-tag">Polylang</span><span class="tech-tag">LDAP</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-header">
+                        <div class="project-title">Prianou</div>
+                        <a href="https://prianou.com" target="_blank" style="color: var(--accent); text-decoration:none; font-size: 0.8rem;">VOIR SITE →</a>
+                    </div>
+                    <p class="project-desc">Solution Web et Mobile innovante avec technologie Geofencing, développée avec Angular 8 et Flutter[cite: 157, 160, 164].</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Angular 8</span><span class="tech-tag">Node.js</span><span class="tech-tag">Flutter</span><span class="tech-tag">Geofencing</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-header">
+                        <div class="project-title">Ville de Saint-Gaudens</div>
+                        <a href="https://www.stgo.fr" target="_blank" style="color: var(--accent); text-decoration:none; font-size: 0.8rem;">VOIR SITE →</a>
+                    </div>
+                    <p class="project-desc">Système de paiement en ligne et déploiement d'une usine à site fonctionnelle[cite: 36, 37].</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Paiement En Ligne</span><span class="tech-tag">Usine à site</span><span class="tech-tag">OpenStreetMap</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <section id="contact" style="border-bottom: none; text-align: center;">
-            <h2 class="section-title">ME CONTACTER</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 30px;">Prête pour de nouveaux défis techniques.</p>
-            <a href="mailto:marwaghanmi.professional@gmail.com" style="color: var(--accent); text-decoration: none; font-size: 1.2rem; font-weight: 600;">marwaghanmi.professional@gmail.com [cite: 172]</a>
-            <p style="margin-top: 10px; color: var(--text-secondary);">+216 20 20 26 92 [cite: 173]</p>
+            <h2 class="section-title">CONTACT</h2>
+            <div style="background: var(--card-bg); border: 1px solid var(--border-color); padding: 50px; border-radius: 12px;">
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">Construisons quelque chose d'incroyable ensemble[cite: 171].</p>
+                <a href="mailto:marwaghanmi.professional@gmail.com" style="color: var(--text-primary); text-decoration: none; font-size: 1.1rem; font-weight: 700;">marwaghanmi.professional@gmail.com</a>
+                <p style="margin-top: 15px; color: var(--accent); letter-spacing: 1px;">+216 20 20 26 92 [cite: 173]</p>
+            </div>
         </section>
 
         <footer>
-            <p>© 2026 Marwa Ghanmi | Built with Passion [cite: 170]</p>
+            <p>© 2026 Marwa Ghanmi | Tous droits réservés.</p>
         </footer>
     </div>
 
@@ -211,24 +175,17 @@
     <script>
         AOS.init({ duration: 800, once: true });
 
-        // Gestion de la navigation active au scroll
+        // Navigation dynamique
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('nav a');
-
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
+                if (pageYOffset >= section.offsetTop - 100) { current = section.getAttribute('id'); }
             });
-
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
+                if (link.getAttribute('href').includes(current)) { link.classList.add('active'); }
             });
         });
     </script>
