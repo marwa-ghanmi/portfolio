@@ -1,13 +1,18 @@
-window.addEventListener("scroll", function () {
-  let elements = document.querySelectorAll(".project");
-
-  elements.forEach(el => {
-    let position = el.getBoundingClientRect().top;
-    let screenHeight = window.innerHeight;
-
-    if (position < screenHeight - 100) {
-      el.style.opacity = 1;
-      el.style.transform = "translateY(0)";
-    }
-  });
+const typed = new Typed(".multiple-text", {
+strings: [
+"Full Stack Developer",
+"WordPress Expert",
+"Angular Developer"
+],
+typeSpeed: 100,
+backSpeed: 60,
+loop: true
 });
+
+// menu mobile
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+navbar.classList.toggle('active');
+};
