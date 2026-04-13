@@ -3,330 +3,270 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio | Marwa Ghanmi</title>
+  <title>Marwa Ghanmi | Portfolio Développeuse Web</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
   <style>
+    :root {
+      --primary: #38bdf8;
+      --bg-dark: #020617;
+      --bg-card: rgba(30, 41, 59, 0.7);
+      --text-gray: #94a3b8;
+    }
+
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Inter", sans-serif;
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       scroll-behavior: smooth;
     }
 
     body {
-      background: #0f172a;
+      background-color: var(--bg-dark);
       color: white;
+      overflow-x: hidden;
+    }
+
+    /* Background Animation Elements */
+    .blob {
+      position: fixed;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(2, 6, 23, 0) 70%);
+      border-radius: 50%;
+      z-index: -1;
+      filter: blur(40px);
     }
 
     /* NAV */
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(10px);
-      padding: 15px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      position: fixed; top: 0; width: 100%;
+      background: rgba(2, 6, 23, 0.8);
+      backdrop-filter: blur(12px);
+      padding: 20px 8%;
+      display: flex; justify-content: space-between; align-items: center;
       z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    header h2 {
-      color: #38bdf8;
-    }
+    .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); letter-spacing: -1px; }
 
     nav a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-      transition: 0.3s;
+      color: white; margin-left: 30px;
+      text-decoration: none; font-size: 0.9rem; font-weight: 500;
+      transition: 0.3s; opacity: 0.8;
     }
 
-    nav a:hover {
-      color: #38bdf8;
-    }
+    nav a:hover { color: var(--primary); opacity: 1; }
 
-    /* HERO */
+    /* HERO SECTION */
     .hero {
       height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 0 20px;
+      background: radial-gradient(circle at center, rgba(56, 189, 248, 0.05) 0%, transparent 70%);
     }
 
-    .hero h1 {
-      font-size: 3rem;
-    }
-
-    .hero p {
-      margin-top: 15px;
-      opacity: 0.8;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; margin-bottom: 20px; }
+    .hero h1 span { color: var(--primary); }
+    .hero p { max-width: 600px; font-size: 1.2rem; color: var(--text-gray); margin-bottom: 30px; }
 
     .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 25px;
-      background: #38bdf8;
-      color: black;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
+      padding: 15px 35px; background: var(--primary); color: #000;
+      font-weight: 700; border-radius: 50px; text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
-    .btn:hover {
-      transform: translateY(-3px);
-      background: #0ea5e9;
-    }
+    .btn:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3); }
 
-    /* SECTIONS */
-    section {
-      padding: 100px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+    /* PROJECTS GRID */
+    section { padding: 100px 8%; }
+    .section-title { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
 
-    h2.section-title {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 40px;
-      color: #38bdf8;
-    }
-
-    /* ABOUT */
-    .about {
-      text-align: center;
-      opacity: 0.9;
-      line-height: 1.8;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    /* SKILLS */
-    .skills {
+    .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-    }
-
-    .skill {
-      background: #1e293b;
-      padding: 20px;
-      text-align: center;
-      border-radius: 10px;
-      transition: 0.3s;
-      border: 1px solid #334155;
-    }
-
-    .skill:hover {
-      transform: translateY(-5px);
-      background: #334155;
-      border-color: #38bdf8;
-    }
-
-    /* PROJECTS */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 30px;
     }
 
-    .card {
-      background: #1e293b;
-      padding: 25px;
-      border-radius: 10px;
-      transition: 0.3s;
-      border-left: 4px solid #38bdf8;
+    .project-card {
+      background: var(--bg-card);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: 0.4s;
     }
 
-    .card:hover {
-      transform: scale(1.02);
-      background: #24334d;
+    .project-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
 
-    .card h3 {
-      margin-bottom: 10px;
-      color: #38bdf8;
+    .project-img {
+      width: 100%; height: 200px;
+      background-size: cover; background-position: top;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .card .tech {
-      font-size: 0.85rem;
-      color: #94a3b8;
-      margin-top: 15px;
-      font-style: italic;
+    .project-content { padding: 25px; }
+    .project-tag { font-size: 0.7rem; color: var(--primary); font-weight: 700; text-transform: uppercase; }
+    .project-content h3 { margin: 10px 0; font-size: 1.4rem; }
+    .project-content p { font-size: 0.9rem; color: var(--text-gray); line-height: 1.6; }
+    
+    .project-link {
+      display: inline-block; margin-top: 20px;
+      color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600;
+      border-bottom: 2px solid var(--primary); padding-bottom: 2px;
     }
 
-    .card .company {
-      font-weight: bold;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      margin-bottom: 5px;
-      display: block;
+    /* CONTACT FORM */
+    .contact-container {
+      max-width: 800px; margin: auto;
+      background: var(--bg-card); padding: 40px; border-radius: 30px;
     }
 
-    /* CONTACT */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      max-width: 500px;
-      margin: auto;
-    }
-
+    .form-group { margin-bottom: 20px; }
     input, textarea {
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-      background: #1e293b;
-      color: white;
+      width: 100%; padding: 15px; border-radius: 12px;
+      background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.1);
+      color: white; outline: none; transition: 0.3s;
     }
 
-    button {
-      padding: 12px;
-      background: #38bdf8;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+    input:focus, textarea:focus { border-color: var(--primary); }
 
-    button:hover {
-      background: #0ea5e9;
-    }
-
-    /* FOOTER */
     footer {
-      text-align: center;
-      padding: 40px;
-      background: #020617;
-      margin-top: 50px;
+      text-align: center; padding: 50px; color: var(--text-gray); font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .footer-contact {
-      margin-bottom: 15px;
-      font-size: 0.9rem;
-      color: #94a3b8;
+    @media (max-width: 768px) {
+      header { padding: 20px 5%; }
+      nav { display: none; }
+      .projects-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <h2>Marwa Ghanmi</h2>
-  <nav>
-    <a href="#home">Accueil</a>
-    <a href="#about">À propos</a>
-    <a href="#skills">Compétences</a>
-    <a href="#projects">Projets</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <div class="blob" style="top: -100px; right: -100px;"></div>
+  <div class="blob" style="bottom: 100px; left: -200px;"></div>
 
-<section class="hero" id="home">
-  <div>
-    <h1>Marwa Ghanmi 👋</h1>
-    <p>Développeuse Web senior spécialisée en PHP et WordPress avec plus de 5 ans d'expérience dans la création de solutions numériques sur mesure.</p>
-    <a class="btn" href="#projects">Découvrir mes projets</a>
-  </div>
-</section>
+  <header>
+    <div class="logo">MARWA.G</div>
+    <nav>
+      <a href="#home">Accueil</a>
+      <a href="#about">Bio</a>
+      <a href="#projects">Projets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section id="about">
-  <h2 class="section-title">À propos de moi</h2>
-  <p class="about">
-    Spécialisée dans la conception et la gestion de sites PHP et WordPress, j'allie expertise technique et sens de l'ergonomie pour créer des sites performants, sécurisés et parfaitement adaptés aux besoins clients. Passionnée par l'innovation numérique, je maîtrise l'ensemble de la chaîne de développement, du Backend au déploiement.
-  </p>
-</section>
-
-<section id="skills">
-  <h2 class="section-title">Expertises Techniques</h2>
-  <div class="skills">
-    <div class="skill">PHP / MySQL</div>
-    <div class="skill">WordPress / Gutenberg</div>
-    <div class="skill">JavaScript / React JS</div>
-    <div class="skill">Angular / Nodejs</div>
-    <div class="skill">Docker / DDEV</div>
-    <div class="skill">Git / Gitlab</div>
-  </div>
-</section>
-
-<section id="projects">
-  <h2 class="section-title">Projets Récents</h2>
-  <div class="projects">
-    
-    <div class="card">
-      <span class="company">STRATIS</span>
-      <h3>Ville de Soisy-sous-Montmorency</h3>
-      <p>Mise en place d'un extranet sécurisé, intégration d'API Brevo, multilinguisme (Polylang) et flux RSS personnalisés.</p>
-      <p class="tech">PHP, Gutenberg, ACF, Docker, Brevo, Yoast</p>
+  <section class="hero" id="home">
+    <h1 data-aos="fade-up">Web Developer <span>Expert.</span></h1>
+    <p data-aos="fade-up" data-aos-delay="100">Plus de 5 ans d'expérience dans la création d'écosystèmes PHP et WordPress performants pour le secteur public et privé[cite: 4, 5].</p>
+    <div data-aos="fade-up" data-aos-delay="200">
+      <a href="#projects" class="btn">Voir mes réalisations</a>
     </div>
+  </section>
 
-    <div class="card">
-      <span class="company">STRATIS</span>
-      <h3>Intranet Salon de Provence</h3>
-      <p>Développement d'un intranet à accès restreint avec synchronisation automatique LDAP / Active Directory pour les utilisateurs.</p>
-      <p class="tech">PHP, LDAP, Gutenberg, ACF, Gulp, Docker</p>
+  <section id="projects">
+    <h2 class="section-title" data-aos="fade-right">Projets Sélectionnés</h2>
+    <div class="projects-grid">
+      
+      <div class="project-card" data-aos="zoom-in">
+        <div class="project-img" style="background-image: url('https://s0.wp.com/mshots/v1/https://www.gorbio.fr?w=600')"></div>
+        <div class="project-content">
+          <span class="project-tag">Secteur Public | Stratis</span>
+          <h3>Commune de Gorbio</h3>
+          <p>Développement de blocs Gutenberg sur mesure et intégration du moteur de recherche Solr[cite: 11, 15].</p>
+          <a href="https://www.gorbio.fr" target="_blank" class="project-link">Visiter le site →</a>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-img" style="background-image: url('https://s0.wp.com/mshots/v1/https://www.soisy-sous-montmorency.fr?w=600')"></div>
+        <div class="project-content">
+          <span class="project-tag">Extranet | Stratis</span>
+          <h3>Ville de Soisy</h3>
+          <p>Mise en place d'un extranet sécurisé avec gestion LDAP et synchronisation Active Directory[cite: 18, 25, 50].</p>
+          <a href="https://www.soisy-sous-montmorency.fr" target="_blank" class="project-link">Visiter le site →</a>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-img" style="background-image: url('https://s0.wp.com/mshots/v1/https://www.maenner-staerken.de?w=600')"></div>
+        <div class="project-content">
+          <span class="project-tag">Social | Quality One Dev</span>
+          <h3>Männer Stärken</h3>
+          <p>Application web de prévention du suicide utilisant React JS pour des blocs Gutenberg interactifs[cite: 103, 106].</p>
+          <a href="https://www.maenner-staerken.de" target="_blank" class="project-link">Visiter le site →</a>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="zoom-in">
+        <div class="project-img" style="background-image: url('https://s0.wp.com/mshots/v1/https://www.missiontalent.com?w=600')"></div>
+        <div class="project-content">
+          <span class="project-tag">RH | Quality One Dev</span>
+          <h3>Mission Talent</h3>
+          <p>Plateforme dynamique de recrutement pour le secteur associatif avec shortcodes personnalisés[cite: 120, 125].</p>
+          <a href="https://www.missiontalent.com" target="_blank" class="project-link">Visiter le site →</a>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-img" style="background-image: url('https://s0.wp.com/mshots/v1/https://prianou.com?w=600')"></div>
+        <div class="project-content">
+          <span class="project-tag">Mobile Web | Gerep</span>
+          <h3>Prianou</h3>
+          <p>Solution innovante de géofencing développée avec Angular 8, Node.js et Flutter[cite: 157, 169].</p>
+          <a href="https://prianou.com" target="_blank" class="project-link">Visiter le site →</a>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-img" style="background-image: url('https://s0.wp.com/mshots/v1/https://adec.corsica?w=600')"></div>
+        <div class="project-content">
+          <span class="project-tag">Économie | Stratis</span>
+          <h3>ADEC Corse</h3>
+          <p>Optimisation SEO et développement de plugins WordPress conformes aux bonnes pratiques Hooks/Filters[cite: 77, 79].</p>
+          <a href="https://adec.corsica" target="_blank" class="project-link">Visiter le site →</a>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <div class="card">
-      <span class="company">Quality One Dev</span>
-      <h3>Männer Stärken</h3>
-      <p>Site de prévention du suicide (Réseau MEN ACCESS). Création de blocs Gutenberg sur mesure avec React JS.</p>
-      <p class="tech">PHP, React JS, Gutenberg, ACF, Gulp</p>
+  <section id="contact">
+    <h2 class="section-title">Parlons de votre projet</h2>
+    <div class="contact-container" data-aos="fade-up">
+      <form>
+        <div class="form-group">
+          <input type="text" placeholder="Votre Nom complet" required>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Adresse Email" required>
+        </div>
+        <div class="form-group">
+          <textarea rows="6" placeholder="Décrivez votre besoin technique..."></textarea>
+        </div>
+        <button type="submit" class="btn" style="width: 100%; cursor: pointer; border: none;">Envoyer la demande</button>
+      </form>
     </div>
+  </section>
 
-    <div class="card">
-      <span class="company">Quality One Dev</span>
-      <h3>Xanocs</h3>
-      <p>E-commerce de cuisines haut de gamme. Création de Custom Post Types, systèmes de promotions et thèmes sur mesure.</p>
-      <p class="tech">PHP, MySQL, Elementor, jQuery, CPT, Gutenberg</p>
-    </div>
+  <footer>
+    <p>Marwa Ghanmi | marwaghanmi.professional@gmail.com [cite: 172]</p>
+    <p>+216 20 20 26 92 [cite: 173]</p>
+    <p style="margin-top: 20px; font-size: 0.7rem;">© 2026 - Conçu avec expertise et modernité.</p>
+  </footer>
 
-    <div class="card">
-      <span class="company">GEREP</span>
-      <h3>Prianou</h3>
-      <p>Solution Web et Mobile de géofencing poussant les offres commerciales de proximité via API temps réel.</p>
-      <p class="tech">Angular 8, Nodejs, MongoDB, Flutter, Google API</p>
-    </div>
-
-    <div class="card">
-      <span class="company">STRATIS</span>
-      <h3>ADEC Corse</h3>
-      <p>Développement de plugins optimisés et de blocs Gutenberg sur mesure pour la page d'accueil de l'Agence de Développement Économique.</p>
-      <p class="tech">PHP, Gutenberg, Polylang, SEO, Docker</p>
-    </div>
-
-  </div>
-</section>
-
-<section id="contact">
-  <h2 class="section-title">Me Contacter</h2>
-  <form>
-    <input type="text" placeholder="Votre Nom" required />
-    <input type="email" placeholder="Votre Email" required />
-    <textarea rows="5" placeholder="Votre Message"></textarea>
-    <button type="submit">Envoyer</button>
-  </form>
-</section>
-
-<footer>
-  <div class="footer-contact">
-    Email : marwaghanmi.professional@gmail.com | Tel : +216 20 20 26 92
-  </div>
-  © 2026 - Marwa Ghanmi | Développeuse Web
-</footer>
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 </html>
