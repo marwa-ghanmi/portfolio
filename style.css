@@ -159,22 +159,19 @@ span {
 .btn:hover {
     box-shadow: none;
 }
-.btn .about {
-    display: inline-block;
+.btn-about {
+    display: inline-block; 
     padding: 1rem 2.8rem;
-    background: var(--main-color);
-    border-radius: 4rem;
+    background: var(--main-color); 
+    border-radius: 4rem; 
     box-shadow: 0 0 1rem var(--main-color);
-    font-size: 1.6rem;
-    color: var(--second-bg-color);
-    letter-spacing: .1rem;
-    font-weight: 600;
+    font-size: 1.6rem; color: var(--second-bg-color); 
+    letter-spacing: .1rem; 
+    font-weight: 600; 
     transition: .5s ease;
-    margin-left: 10%;
-}
-
-.btn .about:hover {
-    box-shadow: none;
+    margin-left: 10%; } 
+.btn-about:hover { 
+    box-shadow: none; 
 }
 .btn-2 {
     display: inline-block;
