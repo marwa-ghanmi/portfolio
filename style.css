@@ -13,10 +13,10 @@
 }
 
 :root {
-    --bg-color: #0A0A0D;
-    --second-bg-color: #1C1C27;
-    --text-color: #EDEDED;
-    --main-color: #C9A227;
+    --bg-color: #0B1220;        /* bleu nuit moderne */
+    --second-bg-color: #111A2E; /* bleu gris élégant */
+    --text-color: #E6EAF2;      /* blanc doux */
+    --main-color: #4F8CFF;      /* bleu tech (accent) */
 }
 
 html {
