@@ -163,3 +163,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Empêche le rechargement de la page
+
+    // Récupération des valeurs
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        project: document.getElementById('projectType').value,
+        budget: document.getElementById('budget').value,
+        message: document.getElementById('message').value
+    };
+
+    console.log("Données prêtes à être envoyées :", formData);
+
+    // Simulation d'envoi
+    const responseDiv = document.getElementById('formResponse');
+    responseDiv.innerText = "Merci " + formData.name + ", votre message a été envoyé avec succès !";
+    responseDiv.style.color = "green";
+
+    // Réinitialiser le formulaire
+    this.reset();
+});
