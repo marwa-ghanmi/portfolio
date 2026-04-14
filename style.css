@@ -154,6 +154,7 @@ span {
     letter-spacing: .1rem;
     font-weight: 600;
     transition: .5s ease;
+    margin-left: 10%;
 }
 
 .btn:hover {
