@@ -25,7 +25,7 @@ html {
 }
 
 body {
-    background: var(--second-bg-color);
+    background: var(--bg-color);
     color: var(--text-color);
 }
 
@@ -40,7 +40,7 @@ section {
     left: 0;
     width: 100%;
     padding: 2rem 9%;
-    background: var(--second-bg-color);
+    background: var(--bg-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
