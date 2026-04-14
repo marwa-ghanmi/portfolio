@@ -41,7 +41,6 @@ section {
     width: 100%;
     padding: 2rem 9%;
     background: var(--bg-color);
-    border-bottom: 1px solid #C9A227;
     display: flex;
     justify-content: space-between;
     align-items: center;
