@@ -322,18 +322,20 @@
     </div>
 
     <!-- RIGHT SIDE -->
-    <form id="contactForm">
-      <div class="input-box">
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email Address" required>
-      </div>
-      <div class="input-box">
-        <input type="text" placeholder="Project Type">
-        <input type="text" placeholder="Project Budget">
-      </div>
-      <textarea cols="30" rows="6" placeholder="Describe Your Project" required></textarea>
-      <input type="submit" value="Send Message" class="btn">
-    </form>
+<form id="contactForm">
+  <div class="input-box">
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email Address" required>
+  </div>
+  <div class="input-box">
+    <input type="text" id="projectType" placeholder="Project Type">
+    <input type="text" id="budget" placeholder="Project Budget">
+  </div>
+  <textarea id="message" cols="30" rows="6" placeholder="Describe Your Project" required></textarea>
+  <input type="submit" value="Send Message" class="btn">
+</form>
+
+<div id="formResponse" style="margin-top: 20px; font-weight: bold;"></div>
   </div>
 </section>
 
