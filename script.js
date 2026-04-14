@@ -6,6 +6,7 @@
     backDelay: 1000,
     loop: true
   });
+
 // Menu Toggle
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
