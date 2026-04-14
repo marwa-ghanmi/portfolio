@@ -340,13 +340,19 @@ span {
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
     display: flex;
+    /* Assure que la boîte prend toute la hauteur disponible dans la grille */
+    height: 100%; 
 }
-
 .projects-box img {
     width: 100%;
+    /* Définit une hauteur fixe ou un ratio (ex: 16/9 ou 3/2) */
+    aspect-ratio: 16 / 9; 
+    /* Force l'image à couvrir toute la zone sans se déformer */
+    object-fit: cover; 
+    /* Aligne l'image au centre si elle est recadrée */
+    object-position: center;
     transition: .5s ease;
 }
-
 .projects-box:hover img {
     transform: scale(1.1);
 }
